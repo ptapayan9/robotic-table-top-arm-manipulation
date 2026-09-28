@@ -51,6 +51,11 @@ int main() {
   }
 
   data->ctrl[0] = 0.0; // clear velocity request
+  const int settling_steps = 100; 
+  for (int step=0; step < settling_steps; ++step){
+    mj_step(model.get(), data.get());
+  }
+
   const double final_error_rad = target_angle_rad - data->qpos[0];
 
   std::cout << (std::abs(final_error_rad) <= tolerance_rad
