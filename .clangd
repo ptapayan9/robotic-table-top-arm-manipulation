@@ -1,0 +1,4 @@
+# Local macOS MuJoCo installation used by this project.
+CompileFlags:
+  Compiler: /usr/bin/clang++
+  Add: [-std=c++20, -F/Applications/MuJoCo.app/Contents/Frameworks]
